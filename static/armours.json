@@ -3,7 +3,7 @@
         "name": "wolf_helmet",
         "attk_bonus": 0,
         "def_bonus": 3,
-        "materials": {"wolf skin": 1, "coins": 100}
+        "materials": {"wolf_skin": 1, "coins": 100}
     },
     {
         "name": "chainmail",
