@@ -174,10 +174,16 @@ def hunting():
             # If player is the winner
             if player_result == "win":
                 new_hp = result[0][0]
-                new_exp = animal[4]
-                new_fame = animal[5]
-                loot = animal[6]
-                new_quantity = animal[7]
+                try:
+                    new_exp = animal[4]
+                    new_fame = animal[5]
+                    loot = animal[6]
+                    new_quantity = animal[7]
+                except:
+                    new_exp = enemy[4]
+                    new_fame = enemy[5]
+                    loot = enemy[6]
+                    new_quantity = enemy[7]
 
                 # Update hp and exp, and fame (if any)
                 db.execute("UPDATE user_status SET hp = ?, exp = exp + ? WHERE userid = ?", new_hp, new_exp, session["user_id"])
@@ -190,9 +196,15 @@ def hunting():
                         db.execute("INSERT into items (userid, name, category, quantity) VALUES (?, ?, ?, ?)", session["user_id"], loot, "normal", new_quantity)
                     else:
                         db.execute("UPDATE items SET quantity = quantity + ? WHERE userid = ? AND name = ?", new_quantity, session["user_id"], loot)
-                    flash("Congratulations! You have beaten {} and gained {} {} as loot! You also gained {} exp and {} fame.".format(animal[0], new_quantity, loot, new_exp, new_fame))
+                    try:
+                        flash("Congratulations! You have beaten {} and gained {} {} as loot! You also gained {} exp and {} fame.".format(animal[0], new_quantity, loot, new_exp, new_fame))
+                    except:
+                        flash("Congratulations! You have beaten {} and gained {} {} as loot! You also gained {} exp and {} fame.".format(enemy[0], new_quantity, loot, new_exp, new_fame))
                 else:
-                    flash("Congratulations! You have beaten {} and gained {} exp and {} fame.".format(animal[0], new_exp, new_fame))
+                    try:
+                        flash("Congratulations! You have beaten {} and gained {} exp and {} fame.".format(animal[0], new_exp, new_fame))
+                    except:
+                        flash("Congratulations! You have beaten {} and gained {} exp and {} fame.".format(enemy[0], new_exp, new_fame))
 
             # If player is loser, set player status to 'dead' and update hp
             elif player_result == "dead":
