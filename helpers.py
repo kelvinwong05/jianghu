@@ -48,7 +48,10 @@ def get_ores():
     """
     Perform mining action and return name of ore and quantity
     """
-    with open("/workspaces/109270830/project/static/ores.json", "r") as f:
+    # Construct the current full path to json file
+    ores_file_path = os.path.join(os.getcwd(), "static", "ores.json")
+
+    with open(ores_file_path, "r") as f:
         ores = json.load(f) # list of dictionaries
         chosen_ore = random.choices(ores, weights=[ore['probability'] for ore in ores])[0] # random choices returns a list even only one element will be chosen
         quantity = random.choices(chosen_ore['quantity'])[0] # random choice of quantity
@@ -59,7 +62,10 @@ def find_animal():
     """
     Find random animal and return name, hp, attack, defense, exp, fame, loot, quantity
     """
-    with open("/workspaces/109270830/project/static/animals.json", "r") as f:
+    # Construct the current full path to json file
+    animals_file_path = os.path.join(os.getcwd(), "static", "animals.json")
+
+    with open(animals_file_path, "r") as f:
         animals = json.load(f) # list of dictionaries
         chosen_animal = random.choices(animals, weights=[animal['probability'] for animal in animals])[0] # random choices returns a list even only one element will be chosen
         animal, loot, exp, hp, attack, defense, fame = chosen_animal['name'], chosen_animal['loot'], chosen_animal['exp'], chosen_animal['hp'], chosen_animal['attk'], chosen_animal['defence'], chosen_animal['fame']
@@ -70,7 +76,10 @@ def find_enemy():
     """
     Find random enemy and return name, hp, attack, defense, exp, fame, loot, quantity
     """
-    with open("/workspaces/109270830/project/static/enemies.json", "r") as f:
+    # Construct the current full path to json file
+    enemies_file_path = os.path.join(os.getcwd(), "static", "enemies.json")
+
+    with open(enemies_file_path, "r") as f:
         enemies = json.load(f) # list of dictionaries
         chosen_enemy = random.choices(enemies, weights=[enemy['probability'] for enemy in enemies])[0] # random choices returns a list even only one element will be chosen
         enemy, loot, exp, hp, attack, defense, fame = chosen_enemy['name'], chosen_enemy['loot'], chosen_enemy['exp'], chosen_enemy['hp'], chosen_enemy['attk'], chosen_enemy['defence'], chosen_enemy['fame']
@@ -133,8 +142,12 @@ def bonus(userid):
     user_armour = user_equip[0]['armour']
 
     # Look up from database the weapon and armour bonus
+    # Construct the current full path to json file
+    weapons_file_path = os.path.join(os.getcwd(), "static", "weapons.json")
+    armours_file_path = os.path.join(os.getcwd(), "static", "armours.json")
+
     # bonus_attk = json file(weapon)
-    with open("/workspaces/109270830/project/static/weapons.json", "r") as f:
+    with open(weapons_file_path, "r") as f:
         weapons_list = json.load(f)
     for weapon in weapons_list:
         if user_weapon == weapon['name'] :
@@ -142,7 +155,7 @@ def bonus(userid):
             break
 
     # bonus_def = json file(armour)
-    with open("/workspaces/109270830/project/static/armours.json", "r") as f:
+    with open(armours_file_path, "r") as f:
         armours_list = json.load(f)
     for armour in armours_list:
         if user_armour == armour['name'] :
@@ -192,7 +205,11 @@ def refresh(playerid):
     return True
 
 def get_weapon_requirements(weapon_name):
-    with open("/workspaces/109270830/project/static/weapons.json", "r") as f:
+
+    # Construct the current full path to json file
+    weapons_file_path = os.path.join(os.getcwd(), "static", "weapons.json")
+
+    with open(weapons_file_path, "r") as f:
         smith_weapons = json.load(f)
         for item in smith_weapons:
             if weapon_name == item['name']:
@@ -200,7 +217,11 @@ def get_weapon_requirements(weapon_name):
                 return weapon_requirements
 
 def get_armour_requirements(armour_name):
-    with open("/workspaces/109270830/project/static/armours.json", "r") as f:
+
+    # Construct the current full path to json file
+    armours_file_path = os.path.join(os.getcwd(), "static", "armours.json")
+
+    with open(armours_file_path, "r") as f:
         smith_armours = json.load(f)
         for item in smith_armours:
             if armour_name == item['name']:
@@ -228,15 +249,4 @@ def has_sufficient_materials(player_inventory, equip_requirements):
 
     # If the loop completes, the player has sufficient materials
     return True
-
-def duel(playerid, opponentid):
-    # Query the player hp, attk, def
-    # Apply bonus attk and def from equip
-
-    # Query the opponent hp, attk, def
-    # Apply bonus attk and def from equip
-
-    # Simulate the fight
-    return True
-
 

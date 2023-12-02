@@ -267,11 +267,15 @@ def smith():
     for item in user_items:
         player_inventory[item['name']] = item['quantity']
 
+    # Construct the current full path to json file
+    weapons_file_path = os.path.join(os.getcwd(), "static", "weapons.json")
+    armours_file_path = os.path.join(os.getcwd(), "static", "armours.json")
+
     # Query the weapons and armours list
-    with open("/workspaces/109270830/project/static/weapons.json", "r") as f:
+    with open(weapons_file_path, "r") as f:
         smith_weapons = json.load(f)
 
-    with open("/workspaces/109270830/project/static/armours.json", "r") as g:
+    with open(armours_file_path, "r") as g:
         smith_armours = json.load(g)
 
     # Query requirements including materials and associated quantity and coins for making the requested weapon
