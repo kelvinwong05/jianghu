@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Ranking
+{% endblock %}
+
+{% block main %}
+    <h3><b>TOP 5 FAME</b></h3><br>
+    <table action="/ranking" method="get">
+        <tr>
+            <th>Rank</th>
+            <th>User Name</th>
+            <th>Level</th>
+            <th>Fame</th>
+            <th>Registration Date</th>
+        </tr>
+        {% for ranking in rankings %}
+        <tr>
+            <td> {{ loop.index }} </td>
+            <td> {{ ranking['username'] }} </td>
+            <td> {{ ranking['level'] }} </td>
+            <td> {{ ranking['fame'] }} </td>
+            <td> {{ ranking['registration_time'] }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

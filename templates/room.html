@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <style>
+        table {
+            border: 1px solid black;
+            width: 30%;
+            margin: 0 auto;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #DAF7A6;
+        }
+    </style>
+    <h4><b>Transaction History</b></h4>
+    <br>
+    <table action="/" method="get">
+        <tr>
+            <th>Transaction Date & Time</th>
+            <th>Action</th>
+            <th>Stock</th>
+            <th>No. of shares</th>
+            <th>Transaction price per share (USD)</th>
+        </tr>
+        {% for transaction in history %}
+        <tr>
+            <td> {{ transaction['transactiontime'] }} </td>
+            <td> {{ transaction['action'].upper() }} </td>
+            <td> {{ transaction['stock'] }} </td>
+            <td> {{ transaction['shares'] }} </td>
+            <td> {{ transaction['transactionprice'] | usd }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

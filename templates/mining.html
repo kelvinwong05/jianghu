@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Mining
+{% endblock %}
+
+{% block main %}
+    <h4>You have {{ profile['stamina'] }} stamina now.</h4>
+    <p></p>
+    <img src="https://media.tenor.com/3lKOUpJq0W0AAAAi/ooznmates-ooz.gif" alt="Mining" style="width:480px;height:480px">
+    {% if status == 'dead' %}
+    <p> YOU ARE DEAD AND MUST REVIVE IN HOSPITAL! </p>
+    {% elif status == 'busy' %}
+    <p>YOU ARE NOW BUSY IN OTHER ACTIVITIES.</p>
+    {% elif status == 'active' %}
+    <form action="/mining" method="post">
+        <button class="btn btn-primary" type="submit" name="mining" value="mining">
+            Go Mining! (-5 Stamina)
+        </button>
+    </form>
+    {% endif %}
+{% endblock %}

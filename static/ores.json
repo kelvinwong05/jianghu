@@ -1,0 +1,34 @@
+[
+    {
+        "name": "stone",
+        "probability": 0.45,
+        "loot": null,
+        "quantity": [0]
+    },
+    {
+        "name": "copper",
+        "probability": 0.35,
+        "loot": "copper",
+        "quantity": [1, 2]
+    },
+    {
+        "name": "iron",
+        "probability": 0.12,
+        "loot": "iron",
+        "quantity": [1]
+    },
+    {
+        "name": "gold",
+        "probability": 0.06,
+        "loot": "gold",
+        "quantity": [0, 1]
+    },
+    {
+        "name": "gem",
+        "probability": 0.02,
+        "loot": "gem",
+        "quantity": [0, 1]
+    }
+]
+
+

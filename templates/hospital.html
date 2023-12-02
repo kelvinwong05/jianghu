@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Hopsital
+{% endblock %}
+
+{% block main %}
+    <h4>Carefully select the therapy that best suits your needs.</h4><br>
+    <h5>Your current HP is {{ profile['hp'] }}.</h5><br>
+    <h5>You have {{ profile['coins']}} coins now.</h5><br>
+    <table style="width: 50%" action="/hospital" method="get">
+        <tr>
+            <th>Methods</th>
+            <th>Description</th>
+            <th>Price (Coins)</th>
+            <th>Healing Effect (HP)</th>
+            <th>Confirm</th>
+        </tr>
+        {% if status == 'busy' %}
+        <tr>
+            Please check out in tavern first!
+        </tr>
+        {% elif status == 'dead' %}
+        <tr>
+            <td>Revive</td>
+            <td><span style="background-color: red"><b>Caution!</b></span> YOU ARE DEAD AND MUST REVIVE TO PLAY.</td>
+            <td><li>Coin (0)</li><li>Fame (-1)</li><li>Stamina ->0</li></td>
+            <td>Restore HP to 100</td>
+            <td>
+                <form action="/hospital" method="post">
+                    <button class="btn btn-primary" type="submit" name="method" value="revive">
+                        Revive
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% elif status == 'active' %}
+        <tr>
+            <td>Acupuncture</td>
+            <td>Inserting thin needles into specific points on the body to stimulate 'Qi', i.e. the flow of vital energy in your body.</td>
+            <td>5</td>
+            <td>+5</td>
+            <td>
+                <form action="/hospital" method="post">
+                    <button class="btn btn-primary" type="submit" name="method" value="acupuncture">
+                        Heal
+                    </button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>Gua Sha</td>
+            <td>Scraping the skin with a massage tool to improve circulation and promote the release of toxins. Often used to relieve muscle tension and pain.</td>
+            <td>20</td>
+            <td>+25</td>
+            <td>
+                <form action="/hospital" method="post">
+                    <button class="btn btn-primary" type="submit" name="method" value="guasha">
+                        Heal
+                    </button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>Herbal Medicine</td>
+            <td>Healing by harnessing the power of natural plants, which tailored to an individual's unique condition.</td>
+            <td>50</td>
+            <td>+80</td>
+            <td>
+                <form action="/hospital" method="post">
+                    <button class="btn btn-primary" type="submit" name="method" value="herbal">
+                        Heal
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endif %}
+    </table>
+{% endblock %}

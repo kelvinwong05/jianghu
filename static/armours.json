@@ -1,0 +1,35 @@
+[
+    {
+        "name": "wolf_helmet",
+        "attk_bonus": 0,
+        "def_bonus": 3,
+        "materials": {"wolf skin": 1, "coins": 100}
+    },
+    {
+        "name": "chainmail",
+        "attk_bonus": 0,
+        "def_bonus": 5,
+        "materials": {"wolf_helmet": 1, "hammer": 1, "coins": 200}
+    },
+    {
+        "name": "leather_armour",
+        "attk_bonus": 0,
+        "def_bonus": 8,
+        "materials": {"chainmail": 1, "tiger_skin": 1, "coins": 300}
+    },
+    {
+        "name": "drokascale_armour",
+        "attk_bonus": 0,
+        "def_bonus": 15,
+        "materials": {"leather_armour": 1, "dragon_skin": 1, "coins": 400}
+    },
+    {
+        "name": "royal_armour",
+        "attk_bonus": 0,
+        "def_bonus": 30,
+        "materials": {"drakoscale_armour": 1, "royal_blood": 3, "coins": 500}
+    }
+]
+
+
+

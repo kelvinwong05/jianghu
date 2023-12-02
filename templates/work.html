@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Work
+{% endblock %}
+
+{% block main %}
+    <h4>Carefully select the workplace. Word hard to earn your reward!</h4><br>
+    <h5>Your current stamina is {{ profile['stamina'] }}.</h5><br>
+    <h5>You have {{ profile['coins']}} coins now.</h5><br>
+    <table style="width: 50%" action="/hospital" method="get">
+        <tr>
+            <th>Role</th>
+            <th>Description</th>
+            <th>Salary (Coins)</th>
+            <th>Cost (Stamina)</th>
+            <th>Confirm</th>
+        </tr>
+        {% if status == 'dead' %}
+        <p> YOU ARE DEAD AND MUST REVIVE IN HOSPITAL! </p>
+        {% elif status == 'busy' %}
+        <p>YOU ARE NOW BUSY IN OTHER ACTIVITIES.</p>
+        {% elif status == 'active' %}
+        <tr>
+            <td>Causal</td>
+            <td>Working as casual staff in "Martial Arts School" on weekends. </td>
+            <td>+5</td>
+            <td>-5</td>
+            <td>
+                <form action="/work" method="post">
+                    <button class="btn btn-primary" type="submit" name="work" value="casual">
+                        Work
+                    </button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>Catering</td>
+            <td>Working as "Little two" to serve food and drink in a tavern. Best place to collect intell of "JiangHu".</td>
+            <td>+25</td>
+            <td>-20</td>
+            <td>
+                <form action="/work" method="post">
+                    <button class="btn btn-primary" type="submit" name="work" value="catering">
+                        Work
+                    </button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>Escort</td>
+            <td>Escorting or guarding valuable shipments, goods, money and valuable items to destinations. It is a high-risk mission as the shipments are susceptible to banditry or other threats.</td>
+            <td>+80</td>
+            <td>-50</td>
+            <td>
+                <form action="/work" method="post">
+                    <button class="btn btn-primary" type="submit" name="work" value="escort">
+                        Work
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endif %}
+    </table>
+{% endblock %}

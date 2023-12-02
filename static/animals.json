@@ -1,0 +1,59 @@
+[
+    {
+        "name": "rat",
+        "probability": 0.45,
+        "loot": null,
+        "quantity": [0],
+        "exp": 1,
+        "hp": 5,
+        "attk": 1,
+        "defence": 0,
+        "fame": 0
+    },
+    {
+        "name": "deer",
+        "probability": 0.35,
+        "loot": "antler",
+        "quantity": [0, 1],
+        "exp": 2,
+        "hp": 10,
+        "attk": 2,
+        "defence": 1,
+        "fame": 0
+    },
+    {
+        "name": "wolf",
+        "probability": 0.12,
+        "loot": "wolf_skin",
+        "quantity": [1, 2],
+        "exp": 5,
+        "hp": 10,
+        "attk": 5,
+        "defence": 2,
+        "fame": 0
+    },
+    {
+        "name": "tiger",
+        "probability": 0.06,
+        "loot": "tiger_skin",
+        "quantity": [0, 1],
+        "exp": 3,
+        "hp": 20,
+        "attk": 10,
+        "defence": 5,
+        "fame": 0
+    },
+    {
+        "name": "dragon",
+        "probability": 0.02,
+        "loot": "dragon_skin",
+        "quantity": [0, 1],
+        "exp": 5,
+        "hp": 30,
+        "attk": 15,
+        "defence": 10,
+        "fame": 1
+    }
+]
+
+

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Player Status
+{% endblock %}
+
+{% block main %}
+    <p>Welcome back to Jiang Hu{{ username }}! </p>
+    <p>Current date and time is {{ current_time.date() }} {{ current_time.time().strftime("%H:%M") }}</p>
+    <h3><b>Your Status</b></h3>
+    <img src="https://7do.zuodd.cn/7do/202210/3ac188f192c43c7a1417e19f2e085bc3.gif" alt="index" style="width:240px;height:240px"><br><br>
+    <table>
+        {% for key, value in user.items() %}
+        <tr>
+            <th> {{ key.capitalize() }}</th>
+            <td> {{ value }}</td>
+        </tr>
+        {% endfor %}
+        {% for key, value in profile.items() %}
+        <tr>
+            <th> {{ key.capitalize() }}</th>
+            <td> {{ value }}</td>
+        </tr>
+        {% endfor %}
+    </table><br>
+    <p> You registered the account on <span style="color: red;">{{ user_regtime['registration_time'] }}</span>.</p>
+{% endblock %}

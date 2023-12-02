@@ -1,0 +1,46 @@
+[
+    {
+        "name": "short_spear",
+        "attk_bonus": 2,
+        "def_bonus": 0,
+        "materials": {"copper": 5, "coins": 100}
+    },
+    {
+        "name": "long_spear",
+        "attk_bonus": 10,
+        "def_bonus": 0,
+        "materials": {"gold": 1, "short_spear": 1, "coins": 200}
+    },
+    {
+        "name": "short_sword",
+        "attk_bonus": 3,
+        "def_bonus": 0,
+        "materials": {"copper": 10, "coins": 100}
+    },
+    {
+        "name": "long_sword",
+        "attk_bonus": 15,
+        "def_bonus": 0,
+        "materials": {"iron": 3, "short_sword": 1, "broken_sword": 1, "coins": 200}
+    },
+    {
+        "name": "short_bow",
+        "attk_bonus": 3,
+        "def_bonus": 0,
+        "materials": {"copper": 5, "coins": 100}
+    },
+    {
+        "name": "cross_bow",
+        "attk_bonus": 10,
+        "def_bonus": 0,
+        "materials": {"iron": 5, "broken_sword": 1, "coins": 200}
+    },
+    {
+        "name": "dragon_slaughter",
+        "attk_bonus": 40,
+        "def_bonus": 0,
+        "materials": {"gem": 1, "long_sword": 1, "long_spear": 1, "antler": 3, "coins": 500}
+    }
+]
+
+

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Ranking
+{% endblock %}
+
+{% block main %}
+    <h4>Duel with a random real player!</h4>
+    <img src="http://i0.hdslb.com/bfs/archive/a0938d92222b1dd56696b1a8d50bea848ff6ef41.jpg" alt="Duel" style="width:800px;height:500px">
+    <p></p>
+    <form action="/duel" method="post">
+        <button class="btn btn-warning" type="submit" name="duel" value="hunting">
+            Find opponent! (-50 Stamina)
+        </button>
+    </form>
+    <p></p>
+    <h3>JiangHu Diary</h3>
+    <p></p>
+    <table>
+        <tr>
+            <th> Killer </th>
+            <th> Deceased </th>
+            <th> Description </th>
+            <th> Fight Time </th>
+        </tr>
+        {% for kill in history %}
+        <tr>
+            <td> {{ kill['killer'] }}</td>
+            <td> {{ kill['deceased'] }}</td>
+            <td> {{ kill['description'] }}</td>
+            <td> {{ kill['fight_time'] }}</td>
+        </tr>
+        {% endfor %}
+    </table><br>
+{% endblock %}

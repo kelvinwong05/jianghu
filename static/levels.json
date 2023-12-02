@@ -1,0 +1,76 @@
+[
+    {
+        "level": 2,
+        "exp": 40,
+        "hp": 110,
+        "stamina": 110,
+        "attk": 2,
+        "def": 1
+    },
+    {
+        "level": 3,
+        "exp": 70,
+        "hp": 100,
+        "stamina": 120,
+        "attk": 2,
+        "def": 2
+    },
+    {
+        "level": 4,
+        "exp": 180,
+        "hp": 130,
+        "stamina": 130,
+        "attk": 3,
+        "def": 2
+    },
+    {
+        "level": 5,
+        "exp": 280,
+        "hp": 140,
+        "stamina": 130,
+        "attk": 3,
+        "def": 3
+    },
+    {
+        "level": 6,
+        "exp": 400,
+        "hp": 150,
+        "stamina": 150,
+        "attk": 4,
+        "def": 3
+    },
+    {
+        "level": 7,
+        "exp": 540,
+        "hp": 160,
+        "stamina": 160,
+        "attk": 4,
+        "def": 4
+    },
+    {
+        "level": 8,
+        "exp": 700,
+        "hp": 170,
+        "stamina": 170,
+        "attk": 5,
+        "de": 4
+    },
+    {
+        "level": 9,
+        "exp": 880,
+        "hp": 180,
+        "stamina": 180,
+        "attk": 5,
+        "def": 5
+    },
+    {
+        "level": 10,
+        "exp": 1080,
+        "hp": 190,
+        "stamina": 190,
+        "attk": 6,
+        "def": 5
+    }
+]
+
+

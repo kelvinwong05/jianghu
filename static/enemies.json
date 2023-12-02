@@ -1,0 +1,59 @@
+[
+    {
+        "name": "eunuch",
+        "probability": 0.45,
+        "loot": null,
+        "quantity": [0],
+        "exp": 3,
+        "hp": 20,
+        "attk": 2,
+        "defence": 0,
+        "fame": 1
+    },
+    {
+        "name": "bandit",
+        "probability": 0.35,
+        "loot": "antler",
+        "quantity": [0, 0, 1],
+        "exp": 5,
+        "hp": 30,
+        "attk": 5,
+        "defence": 2,
+        "fame": 1
+    },
+    {
+        "name": "landlord",
+        "probability": 0.12,
+        "loot": "treasure_map",
+        "quantity": [0, 1],
+        "exp": 5,
+        "hp": 40,
+        "attk": 2,
+        "defence": 1,
+        "fame": 0
+    },
+    {
+        "name": "gangster",
+        "probability": 0.06,
+        "loot": "broken_sword",
+        "quantity": [0, 1],
+        "exp": 10,
+        "hp": 50,
+        "attk": 10,
+        "defence": 4,
+        "fame": 2
+    },
+    {
+        "name": "general",
+        "probability": 0.02,
+        "loot": "royal_blood",
+        "quantity": [0, 1],
+        "exp": 20,
+        "hp": 80,
+        "attk": 25,
+        "defence": 5,
+        "fame": 3
+    }
+]
+
+
