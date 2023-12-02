@@ -6,40 +6,44 @@
 
 {% block main %}
     <h4>You have {{ profile['stamina'] }} stamina now.</h4>
-    <div class="container">
+    <div class="container text-center">
         <div class="row justify-content-center">
-            <div class="card w-30 mb-3" style="width: 30%">
-                <img src="https://img2.secretchina.com/pic/2018/12-27/p2330541a160534297-ss.jpg" class="card-img-top" alt="Hunting Animal">
-                <div class="card-body">
-                    <p class="card-text">Go to the forest and hunt some random wild animals.</p>
-                    {% if status == 'dead' %}
-                    <div>You are dead. Please go to hospital to revive.</div>
-                    {% elif status == 'busy' %}
-                    <div>You are busy. Please go to tavern to check out.</div>
-                    {% elif status == 'active' %}
-                    <form action="/hunting" method="post">
-                        <button class="btn btn-warning" type="submit" name="hunting" value="hunting">
-                            Go Hunting! (-5 Stamina)
-                        </button>
-                    </form>
-                {% endif %}
+            <div class="col">
+                <div class="card" style="width: 30%">
+                    <img src="https://img2.secretchina.com/pic/2018/12-27/p2330541a160534297-ss.jpg" class="card-img-top" alt="Hunting Animal">
+                    <div class="card-body">
+                        <p class="card-text">Go to the forest and hunt some random wild animals.</p>
+                        {% if status == 'dead' %}
+                        <div>You are dead. Please go to hospital to revive.</div>
+                        {% elif status == 'busy' %}
+                        <div>You are busy. Please go to tavern to check out.</div>
+                        {% elif status == 'active' %}
+                        <form action="/hunting" method="post">
+                            <button class="btn btn-warning" type="submit" name="hunting" value="hunting">
+                                Go Hunting! (-5 Stamina)
+                            </button>
+                        </form>
+                    {% endif %}
+                    </div>
                 </div>
             </div>
-            <div class="card w-30 mb-3" style="width: 30%">
-                <img src="https://images.ctfassets.net/pl05rcmbdryr/4y2eORQOu3zb1NosGcnWH2/09a3c0c94cb92d347d7561efaaf42964/1e607fadab63f115c76886fa6fd60951.jpeg?w=1200" class="card-img-top" alt="Fighting Enemy" width="500" height="210">
-                <div class="card-body">
-                    <p class="card-text">Fight with a NPC enemy and earn your fame! <span style="color: red"><b>(Dangerous)</span></b></p>
-                    {% if status == 'dead' %}
-                    <div>You are dead. Please go to hospital to revive.</div>
-                    {% elif status == 'busy' %}
-                    <div>You are busy. Please go to tavern to check out.</div>
-                    {% elif status == 'active' %}
-                    <form action="/hunting" method="post">
-                        <button class="btn btn-danger" type="submit" name="enemy" value="enemy">
-                            Fight enemy! (-5 Stamina)
-                        </button>
-                    </form>
-                    {% endif %}
+            <div class="col">
+                <div class="card" style="width: 30%">
+                    <img src="https://images.ctfassets.net/pl05rcmbdryr/4y2eORQOu3zb1NosGcnWH2/09a3c0c94cb92d347d7561efaaf42964/1e607fadab63f115c76886fa6fd60951.jpeg?w=1200" class="card-img-top" alt="Fighting Enemy" width="500" height="210">
+                    <div class="card-body">
+                        <p class="card-text">Fight with a NPC enemy and earn your fame! <span style="color: red"><b>(Dangerous)</span></b></p>
+                        {% if status == 'dead' %}
+                        <div>You are dead. Please go to hospital to revive.</div>
+                        {% elif status == 'busy' %}
+                        <div>You are busy. Please go to tavern to check out.</div>
+                        {% elif status == 'active' %}
+                        <form action="/hunting" method="post">
+                            <button class="btn btn-danger" type="submit" name="enemy" value="enemy">
+                                Fight enemy! (-5 Stamina)
+                            </button>
+                        </form>
+                        {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
