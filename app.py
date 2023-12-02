@@ -462,6 +462,9 @@ def work():
 def tavern():
     """Allow player to rest, change equipment and view items"""
 
+    # Get the file path of tavern photo
+    tavern_file_path = os.path.join(os.getcwd(), "static", "tavern.jpg")
+
     # Query user info from database
     user = db.execute("SELECT status, fame FROM users WHERE id = ?", session["user_id"])
     status = user[0]['status']
@@ -563,7 +566,7 @@ def tavern():
             return render_template("tavern.html", profile=profile, user_items_weapons=user_items_weapons, user_items_armours=user_items_armours, user_items=user_items)
     else:
         refresh(session["user_id"])
-        return render_template("tavern.html", profile=profile, user_items_weapons=user_items_weapons, user_items_armours=user_items_armours, user_items=user_items, status=status)
+        return render_template("tavern.html", profile=profile, user_items_weapons=user_items_weapons, user_items_armours=user_items_armours, user_items=user_items, status=status, tavern_photo=tavern_file_path)
 
 
 @app.route("/duel", methods=["GET", "POST"])
@@ -572,6 +575,9 @@ def duel():
     """
     Find a random player to duel
     """
+    # Get Duel Photo file path
+    duel_file_path = os.path.join(os.getcwd(), "static", "duel.jpg")
+
     # Valide and use 50 stamina to find opponent player
     profile = db.execute("SELECT userid, stamina, hp, attk, def, weapon, armour FROM user_status WHERE userid = ?", session["user_id"])
     profile = profile[0]
@@ -676,7 +682,7 @@ def duel():
             db.execute("INSERT INTO history (killer, deceased, fight_time, description) VALUES (?, ?, ?, ?)", killer, deceased, fight_time, description)
             return render_template("duel.html")
     else:
-        return render_template("duel.html", history=history)
+        return render_template("duel.html", history=history, duel_photo = duel_file_path)
 
 
 @app.route("/register", methods=["GET", "POST"])
