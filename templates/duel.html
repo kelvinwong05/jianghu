@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Ranking
+    Duel
 {% endblock %}
 
 {% block main %}
     <h4>Duel with a random real player!</h4>
-    <img src="/app/static/tavern.jpg" alt="Duel Image" style="width:800px;height:500px">
+    <img src="https://githubproject-2b82136bcb5a.herokuapp.com/static/tavern.jpg" alt="Duel Image" style="width:800px;height:500px">
     <p></p>
     <form action="/duel" method="post">
         <button class="btn btn-warning" type="submit" name="duel" value="hunting">
