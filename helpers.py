@@ -6,6 +6,7 @@ import requests
 import subprocess
 import urllib
 import uuid
+import os
 import json
 import random
 
@@ -164,7 +165,10 @@ def refresh(playerid):
     # Initialize the new level as the same level in profile
     new_level = player_level
 
-    with open("/workspaces/109270830/project/static/levels.json", "r") as f:
+    # Construct the full path to json file
+    levels_file_path = os.path.join("/workspaces/jianghu/static", "levels.json")
+
+    with open(levels_file_path, "r") as f:
         levels = json.load(f)
 
         # Create a loop to query the highest level possible

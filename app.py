@@ -672,7 +672,6 @@ def duel():
             db.execute("INSERT INTO history (killer, deceased, fight_time, description) VALUES (?, ?, ?, ?)", killer, deceased, fight_time, description)
             return render_template("duel.html")
     else:
-        print(history)
         return render_template("duel.html", history=history)
 
 
