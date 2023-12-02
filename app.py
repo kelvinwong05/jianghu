@@ -98,7 +98,7 @@ def market():
 
             # Print success message and redirect to market page
             flash("You have successfully sell an item!")
-            return redirect("/market")
+            return redirect("/")
 
         elif request.form.get("buy"):
             # When accept an offer, delete item from market list, deduct coins, and then update buyer's item list
@@ -124,7 +124,7 @@ def market():
 
         else:
             # Redirect user to home page
-            return redirect("/market")
+            return redirect("/")
 
     else:
         return render_template("market.html", items=items, market=market_list, profile=profile, id=session["user_id"])
@@ -213,7 +213,7 @@ def hunting():
             elif player_result == "tie":
                 flash("You have fought with your opponent {} for a day and a night... You two were exhausted and decided to fight next time!".format(animal[0]))
             refresh(session["user_id"])
-            return redirect("/hunting")
+            return redirect("/")
 
     else:
         return render_template("hunting.html", profile=profile, status=status)
@@ -244,7 +244,7 @@ def mining():
                 # Gain 1 coin and print a message
                 db.execute("UPDATE user_status SET coins = coins + 1 WHERE userid = ?", session["user_id"])
                 flash("You dug really deep....and got some useless stones - but you managed to sell them at 1 coin!")
-                return redirect("/mining")
+                return redirect("/")
             else:
                 # Update the user inventory
                 if result[1] == 0:
@@ -257,7 +257,7 @@ def mining():
                         db.execute("INSERT INTO items (userid, name, category, quantity) VALUES (?, ?, ?, ?)", session["user_id"], result[0], "normal", result[1])
                     else:
                         db.execute("UPDATE items SET quantity = quantity + ? WHERE userid = ? AND name = ?", result[1], session["user_id"], result[0])
-                    return redirect("/mining")
+                    return redirect("/")
     else:
         print(user_status)
         return render_template("mining.html", profile=profile, status=status)
@@ -456,7 +456,7 @@ def work():
             else:
                 db.execute("UPDATE user_status SET stamina = stamina - 20, coins = coins + 25 WHERE userid = ?", session["user_id"])
         elif work == 'escort':
-            if profile['stamina'] < 150:
+            if profile['stamina'] < 50:
                 return apology("You have insufficent stamina!", 400)
             else:
                 db.execute("UPDATE user_status SET stamina = stamina - 50, coins = coins + 80 WHERE userid = ?", session["user_id"])
@@ -464,7 +464,7 @@ def work():
             flash("Invalid action. Choose again.")
             return redirect("/")
         flash("Congratulations! You worked and received salary!")
-        return redirect("/work")
+        return redirect("/")
     else:
         return render_template("work.html", profile=profile, status=status)
 
