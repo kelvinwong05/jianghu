@@ -165,8 +165,8 @@ def refresh(playerid):
     # Initialize the new level as the same level in profile
     new_level = player_level
 
-    # Construct the full path to json file
-    levels_file_path = os.path.join("/workspaces/jianghu/static", "levels.json")
+    # Construct the current full path to json file
+    levels_file_path = os.path.join(os.getcwd(), "static", "levels.json")
 
     with open(levels_file_path, "r") as f:
         levels = json.load(f)
