@@ -602,7 +602,7 @@ def duel():
             return apology("You have not enough stamina!", 400)
         else:
             # Query a list of opponents and a random opponent profile except the player itself
-            opponentids = db.execute("SELECT id FROM users WHERE id != ? AND status != 'dead' ", session["user_id"])
+            opponentids = db.execute("SELECT id FROM users WHERE id NOT IN (?, ?) AND id != ? AND status != 'dead' ", session["user_id"], 2, session["user_id"])
             try:
                 opponentid = random.choices(opponentids)[0]['id']
             except:
