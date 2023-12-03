@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+    <h4 text-align="center"> Change Password </h4><br>
+    <p text-align="center"> The new password must be at least 6 characters' long and contain at least letter(s), number(s) and symbol(s). </p>
+    <form action="/settings" method="post">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="oldpassword" name="oldpassword" placeholder="Old Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="newpassword" name="newpassword" placeholder="New Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Re-type New Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Confirm</button>
+    </form>
+{% endblock %}

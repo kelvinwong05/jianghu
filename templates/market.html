@@ -6,12 +6,9 @@
 
 {% block main %}
     <h3>You have {{ profile['coins'] }} coins.</h3><br>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row align-items-start">
-            <div class="col-4 order-1">
-                <img src="https://p3.itc.cn/images01/20230320/6045e97d8b9f4695aa091ddf3c31302a.jpeg" class="img-fluid" alt="Market" style="width:307px;height:240px">
-            </div>
-            <div class="col-4 order-2">
+            <div class="col">
                 <h4 text-align="center"><b>Buy</b></h4><br>
                 <form action="/market" method="post">
                     <table>
@@ -42,7 +39,7 @@
                     </table>
                 </form><br>
             </div>
-            <div class="col-4 order-3">
+            <div class="col">
                 <h4 text-align="center"><b>Sell</b></h4><br>
                 <form action="/market" method="post">
                     <select class="form-select" name="sell" required>

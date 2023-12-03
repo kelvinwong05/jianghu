@@ -187,7 +187,10 @@ def refresh(playerid):
         # Create a loop to query the highest level possible
         for level in levels:
             if player_exp > level['exp']:
+                
+                # Set the new_level for iterating next level in loop
                 new_level = level['level']
+
                 if new_level > player_level:
                     new_hp, new_stamina, new_attk, new_def = level['hp'], level['stamina'], level['attk'], level['def']
 

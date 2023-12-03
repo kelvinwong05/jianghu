@@ -31,16 +31,18 @@ def after_request(response):
     return response
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 @login_required
 def index():
     """Show user status and history"""
 
     # Query user status and current time from database
-    user_profile = db.execute("SELECT exp, stamina, coins, hp, attk, def FROM user_status WHERE userid = ?", session["user_id"])
-    profile = user_profile[0]
-    user_info = db.execute("SELECT username, status, fame, level FROM users WHERE id = ?", session["user_id"])
-    user = user_info[0]
+    profile = db.execute("SELECT exp, stamina, coins, hp, attk, def FROM user_status WHERE userid = ?", session["user_id"])
+    profile = profile[0]
+    user = db.execute("SELECT username, status, fame, level FROM users WHERE id = ?", session["user_id"])
+    user = user[0]
+    user_equip = db.execute("SELECT weapon, armour FROM users WHERE id = ?", session["user_id"])
+    user_equip = user_equip[0]
     user_regtime = db.execute("SELECT registration_time FROM users WHERE id = ?", session["user_id"])
     user_regtime = user_regtime[0]
     current_time = datetime.now()
@@ -48,9 +50,11 @@ def index():
     # Update level based on exp.
     refresh(session["user_id"])
 
-    # Show the level, status, stamina, money, hp, attk, def, and fame in a table (in html)
+    # Pass level, status, stamina, money, hp, attk, def, and fame to html table (done)
+    # Pass the bonus attack and defence info to html table
+    user_bonus = bonus(session["user_id"])
 
-    return render_template("index.html", profile=profile, current_time=current_time, user=user, user_regtime=user_regtime)
+    return render_template("index.html", profile=profile, current_time=current_time, user=user, user_regtime=user_regtime, user_bonus=user_bonus)
 
 
 @app.route("/ranking", methods=["GET", "POST"])
@@ -61,8 +65,6 @@ def ranking():
     # Query ranking status from database
     rankings = db.execute("SELECT username, level, fame, registration_time FROM users ORDER BY fame DESC LIMIT 5")
     return render_template("ranking.html", rankings=rankings)
-
-    # Show the duel history of whole JiangHu
 
 
 @app.route("/market", methods=["GET", "POST"])

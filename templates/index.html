@@ -22,6 +22,14 @@
             <td> {{ value }}</td>
         </tr>
         {% endfor %}
+        <tr>
+            <th> Weapon bonus </th>
+            <td> +{{ <user_bonus[0] }}</td>
+        </tr>
+        <tr>
+            <th> Armour bonus </th>
+            <td> +{{ <user_bonus[1] }}</td>
+        </tr>
     </table><br>
     <p> You registered the account on <span style="color: red;">{{ user_regtime['registration_time'] }}</span>.</p>
 {% endblock %}
