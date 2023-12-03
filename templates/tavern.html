@@ -16,10 +16,10 @@
           <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
             <div class="accordion-body">
               <img src="https://githubproject-2b82136bcb5a.herokuapp.com/static/tavern.jpg" class="img-fluid" alt="tavern"><br><br>
-              <p>Once "check-in," you start to rest and cannot perform other actions, but you accumulate stamina until you check out.</p>
+              <p>Once "check-in," you start to rest and cannot perform other actions, but you accumulate stamina (1 min = 1 stamina) until you check out.</p>
             </div>
             {% if status == "active" %}
-            <p>You can now check-in.</p>
+            <p>You can now check-in to rest.</p>
             <form action="/tavern" method="post">
               <button class="btn btn-primary" type="submit" name="checkin" value="checkin">
                 Rest
