@@ -41,8 +41,6 @@ def index():
     profile = profile[0]
     user = db.execute("SELECT username, status, fame, level FROM users WHERE id = ?", session["user_id"])
     user = user[0]
-    user_equip = db.execute("SELECT weapon, armour FROM users WHERE id = ?", session["user_id"])
-    user_equip = user_equip[0]
     user_regtime = db.execute("SELECT registration_time FROM users WHERE id = ?", session["user_id"])
     user_regtime = user_regtime[0]
     current_time = datetime.now()
