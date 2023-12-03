@@ -195,7 +195,8 @@ def refresh(playerid):
                 # Keep track of the latest new_level for iterating next level in loop
                 new_level = level['level']
                 # Reset hp, stamina, basic attack and defence if upgrade to a new level 
-                new_hp, new_stamina, new_attk, new_def = level['hp'], level['stamina'], level['attk'], level['def']
+                new_hp, new_stamina, new_attk = level['hp'], level['stamina'], level['attk']
+                new_def = level['def']
                 # Reset hp, stamina, basic attack and defence and update to new level
                 db.execute("UPDATE user_status SET hp = ?, stamina = ?, attk = ?, def = ? WHERE userid = ?", new_hp, new_stamina, new_attk, new_def, playerid)
                 db.execute("UPDATE users SET level = ? WHERE id = ?", new_level, playerid)
