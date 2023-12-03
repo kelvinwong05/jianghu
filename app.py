@@ -117,7 +117,11 @@ def market():
                 db.execute("UPDATE items SET quantity = quantity + ? WHERE userid = ? AND name = ?", buy['quantity'], session["user_id"], buy['name'])
 
             # Update seller's coins and delete from market offer
-            db.execute("UPDATE user_status SET coins = coins + ? WHERE userid = ?", buy['coins'], buy['userid'])
+            # Get back the userid from form
+            seller_name = buy['username']
+            seller_id = db.execute("SELECT id FROM users WHERE username = ?", seller_name)
+            seller_id = seller_id[0]['id']
+            db.execute("UPDATE user_status SET coins = coins + ? WHERE userid = ?", buy['coins'], seller_id)
             db.execute("DELETE FROM market WHERE userid = ? AND name = ?", buy["userid"], buy['name'])
             flash("You have successfully bought an item!")
             return redirect("/market")
