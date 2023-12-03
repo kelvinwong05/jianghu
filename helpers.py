@@ -204,14 +204,21 @@ def refresh(playerid):
                     db.execute("UPDATE user_status SET hp = ?, stamina = ?, attk = ?, def = ? WHERE userid = ?", new_hp, new_stamina, new_attk, new_def, playerid)
                     db.execute("UPDATE users SET level = ? WHERE id = ?", new_level, playerid)
 
-                # Break the loop if reaching the highest level in loop
+                # Break the loop if reaching the highest level based on exp.
                 else:
-                    # If no upgrade is done, also reset HP / stamina if exceeds max. amount allowed
+                    # If no further upgrade is done, also reset HP / stamina if exceeds max. amount allowed
                     if profile['hp'] > level['hp']:
                         db.execute("UPDATE user_status SET hp = ? WHERE userid = ?", level['hp'], playerid)
                     if profile['stamina'] > level['stamina']:
                         db.execute("UPDATE user_status SET stamina = ? WHERE userid = ?", level['stamina'], playerid)
-                    break            
+                    break
+                
+            # If reaches max level, still check max stam & hp
+            elif level['level'] == player_level:
+                if profile['hp'] > level['hp']:
+                    db.execute("UPDATE user_status SET hp = ? WHERE userid = ?", level['hp'], playerid)
+                if profile['stamina'] > level['stamina']:
+                    db.execute("UPDATE user_status SET stamina = ? WHERE userid = ?", level['stamina'], playerid)
     return True
 
 def get_weapon_requirements(weapon_name):
