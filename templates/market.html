@@ -26,9 +26,6 @@
                                     <td> {{ value }} </td>
                                     <input type="hidden" name="{{ key }}" value="{{ value }}">
                                 {% endfor %}
-                                {% if item['userid'] == id %}
-                                <td><button class="btn btn-primary" name="revoke" value="{{ item }}" type="submit" >Confirm</button></td>
-                                {% endif %}
                                 {% if profile['coins'] >= item['coins'] %}
                                     <td><button class="btn btn-primary" name="buy" value="{{ item }}" type="submit">Confirm</button></td>
                                 {% else %}
