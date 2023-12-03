@@ -122,7 +122,7 @@ def market():
             seller_id = db.execute("SELECT id FROM users WHERE username = ?", seller_name)
             seller_id = seller_id[0]['id']
             db.execute("UPDATE user_status SET coins = coins + ? WHERE userid = ?", buy['coins'], seller_id)
-            db.execute("DELETE FROM market WHERE userid = ? AND name = ?", buy["userid"], buy['name'])
+            db.execute("DELETE FROM market WHERE userid = ? AND name = ?", seller_id, buy['name'])
             flash("You have successfully bought an item!")
             return redirect("/market")
 
