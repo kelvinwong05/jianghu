@@ -107,5 +107,5 @@ Contact: kelvinwong05@gmail.com
 This project is released under the [Unlicense](https://unlicense.org/), meaning there are no restrictions on how you can use or distribute it.
 
 #### Acknowledgments
-* [CS502023 Teaching Team](https://cs50.harvard.edu/x/2023/): Truly grateful for the inspiration and guidance:gift_heart:. A heartfelt THANK YOU for such a well-organised course for free. 
+* [CS502023 Teaching Team](https://cs50.harvard.edu/x/2023/): Truly grateful for the inspiration and guidance :gift_heart: . A heartfelt THANK YOU for such a well-organised course for free. 
 This project marks the beginning of my coding journey, and now you made me believe in my ability to create something meaning on my own!
