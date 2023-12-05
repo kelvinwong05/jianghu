@@ -91,17 +91,17 @@ While the Duel promises thrill, it's not without risk. Even in the sanctuary of 
 Every Duel is a story, a tale that reverberates in JiangHu's history. The outcomes, whether triumphant or humbling, become part of the collective lore. The Duel is not just about winning; it's about the journey, the camaraderie, and the indomitable spirit that defines the true heroes of JiangHu.
 
 ### Future expansion ideas (no road map yet)
-New Feature 1: Add a live chat room
-New Feature 2: Add individual / co-op mission for players
-New Feature 3: Add adventure to collect pieces of treasure map
+1. Add a live chat room
+1. Add individual / co-op mission for players
+1. Add adventure to collect pieces of treasure map
 
 #### Author
 Contributor name: Kelvin Wong 
 Contact: kelvinwong05@gmail.com
 
 #### Version History
-* 0.1
-* Initial Release (4/12/2023)
+2. 0.1
+  - Initial Release (4/12/2023)
 
 #### License
 This project is released under the [Unlicense](https://unlicense.org/), meaning there are no restrictions on how you can use or distribute it.
