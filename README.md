@@ -1,7 +1,7 @@
-# Project Title: JiangHu - A Web Api Text-Based game
+# Project Title: JiangHu - A Web Text-Based game
 #### Video Demo:  <URL HERE>
 
-### Description – the purpose of the project and overview of use
+#### Description – the purpose of the project and overview of use
 In the CS50 course at Harvard University, I learned the basics of writing a lightweight Web API using Python and the Flask framework. 
 
 It reminded me of an era in around 2000s, when was the blooming age of internet. There was an influx of simple text-based text games, such as the horror tower which basically you take an escalator to different levels to explore, and you will be randomly scared.
