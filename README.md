@@ -42,8 +42,10 @@ Password changing function is added for settings.
 * The dependencies can be found in the 'requirements.txt' file.
 
 #### Executing Program
-* Deployment is streamlined through Heroku. Follow the guidelines in the Procfile to successfully execute the web API. I have already exhausted my knoweledge to ensure robust testing. It aimed to achieve flawless functionality.
-Of course, feel free to let me know of any issue as I am still learning :)
+* Deployment is tested as robustly as possible through Heroku.
+[!IMPORTANT] Procfile is necessary and has been included to execute the programme
+
+But please feel free to let me know of any issue as I am still learning :smile:
 
 ### Game Elements
 #### Register and maintainng a player profile
@@ -100,8 +102,7 @@ Contributor name: Kelvin Wong
 Contact: kelvinwong05@gmail.com
 
 #### Version History
-2. 0.1
-  - Initial Release (4/12/2023)
+0.1 - Initial Release (4/12/2023)
 
 #### License
 This project is released under the [Unlicense](https://unlicense.org/), meaning there are no restrictions on how you can use or distribute it.
