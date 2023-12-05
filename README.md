@@ -1,7 +1,7 @@
 # Project Title: JiangHu - A Web Api Text-Based game
 #### Video Demo:  <URL HERE>
 
-## Description – the purpose of the project and overview of use
+### Description – the purpose of the project and overview of use
 In the CS50 course at Harvard University, I learned the basics of writing a lightweight Web API using Python and the Flask framework. 
 
 It reminded me of an era in around 2000s, when was the blooming age of internet. There was an influx of simple text-based text games, such as the horror tower which basically you take an escalator to different levels to explore, and you will be randomly scared.
@@ -12,7 +12,7 @@ So when I started my journey in learning computer science, it striked me a lot w
 
 As the CS50 journey unfolded, my thoughts coalesced around this project for the final milestone. The primary motive? Pure enjoyment. This game, devoid of a traditional endpoint or 'game over,' is a testament to the joy found in the journey itself. If, during this interactive odyssey, players find themselves entertained, the project fulfills its purpose.
 
-## Development Plan
+### Development Plan
 When I crafted the timeline of the project in late November 2023, I was aware of the deadline of submission as 31st December 2023 or else my progress will be carried forward to next year. 
 
 Crafting a timeline for the project, I navigated the looming deadline, ensuring progression without succumbing to the allure of feature bloat. This meant that I tried to avoid to be a project scope creep as it is tempting to add more and more features in the game as I developed it but I might lack the knowledge and time to develop those attractive features.
