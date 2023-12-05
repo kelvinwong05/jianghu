@@ -104,7 +104,7 @@ Contact: kelvinwong05@gmail.com
 * Initial Release (4/12/2023)
 
 #### License
-This project is released under the Unlicense (https://unlicense.org/), meaning there are no restrictions on how you can use or distribute it.
+This project is released under the [Unlicense] (https://unlicense.org/), meaning there are no restrictions on how you can use or distribute it.
 
 #### Acknowledgments
 * [CS502023 Teaching Team] (https://cs50.harvard.edu/x/2023/) 
