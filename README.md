@@ -37,7 +37,7 @@ Pages/Activities: Register, Login, Logout, Settings
 Knowledge Applied: Pages migrated from the problem set (Finance in Week 9 of CS50) for adoption in this project. 
 Password changing function is added for settings.
 
-### Getting started Installation and technical requirements 
+### Getting started - Installation and Technical Requirements 
 #### Dependencies
 * The dependencies can be found in the 'requirements.txt' file.
 
