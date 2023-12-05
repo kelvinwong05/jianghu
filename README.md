@@ -37,19 +37,19 @@ Pages/Activities: Register, Login, Logout, Settings
 Knowledge Applied: Pages migrated from the problem set (Finance in Week 9 of CS50) for adoption in this project. 
 Password changing function is added for settings.
 
-## Getting started Installation and technical requirements 
-### Dependencies
+### Getting started Installation and technical requirements 
+#### Dependencies
 * The dependencies can be found in the 'requirements.txt' file.
 
-### Executing Program
+#### Executing Program
 * Deployment is streamlined through Heroku. Follow the guidelines in the Procfile to successfully execute the web API. I have already exhausted my knoweledge to ensure robust testing. It aimed to achieve flawless functionality.
 Of course, feel free to let me know of any issue as I am still learning :)
 
-## Game Elements
-### Register and maintainng a player profile
+### Game Elements
+#### Register and maintainng a player profile
 Creating a player account involves selecting a unique username and crafting a password. Passwords, a mix of letters, numbers, and symbols, must be at least 6 characters long. While password changes are allowed in Settings, the username remains immutable.
 
-### What you can do in the game and how do you know
+#### What you can do in the game and how do you know
 The 'Status' page acts as a constant companion, displaying your character's statistics. Note that you can and should always refresh your status in this page, and most of the time when you perform certain actions, you will be directed to this default page.
 
 Level progression hinges on accumulated experiences from various activities. Elevated levels translate to enhanced basic attack and defense numbers, along with a higher ceiling of HP and stamina.
@@ -90,24 +90,23 @@ While the Duel promises thrill, it's not without risk. Even in the sanctuary of 
 
 Every Duel is a story, a tale that reverberates in JiangHu's history. The outcomes, whether triumphant or humbling, become part of the collective lore. The Duel is not just about winning; it's about the journey, the camaraderie, and the indomitable spirit that defines the true heroes of JiangHu.
 
-## Future expansion ideas (no road map yet)
-### Feature 1: Add a live chat room
-### Feature 2: Add individual / co-op mission for players
-### Feature 3: Add adventure to collect pieces of treasure map
-### Feature 4: Using fame as a buff factor to improve efficiency of other activities
+### Future expansion ideas (no road map yet)
+New Feature 1: Add a live chat room
+New Feature 2: Add individual / co-op mission for players
+New Feature 3: Add adventure to collect pieces of treasure map
 
-## Author
+#### Author
 Contributor name: Kelvin Wong 
 Contact: kelvinwong05@gmail.com
 
-## Version History
+#### Version History
 * 0.1
 * Initial Release (4/12/2023)
 
-## License
+#### License
 This project is released under the Unlicense (https://unlicense.org/), meaning there are no restrictions on how you can use or distribute it.
 
-## Acknowledgments
+#### Acknowledgments
 * [CS502023 Teaching Team] (https://cs50.harvard.edu/x/2023/) 
 Truly grateful  for the inspiration and guidance. A heartfelt THANK YOU for such a well-organised course for free. 
 This project marks the beginning of my coding journey, and now you made me believe in my ability to create something meaning on my own!
